@@ -572,7 +572,17 @@ Include (copy/paste structure):
 Output you want from ChatGPT: one “master prompt” you can reuse in other tools or chats.
 
 ```
-Write me a prompt, where I will build a forum web application. The app is in de background connected with Github by using a github token where I can fetch with data. the forum see all the issues fromt the repo, you can search on title, as user i can create a new issue after fillen a form with title, description, label have 2 options = "bug" or "suggestion". Once you click on the issue you wil land on a detail page to see the information about the issue. UX/UI I want a very modern look, that make the user easy and clear to use. I want to use clear and bright colors. TECH: Moder Next.js with focus on server side components, styling will me css-modules, typescript, for icons use lucide-react, github
+Write me a prompt, where I will build a forum web application.
+The app is in de background connected with Github by using a github token where I can fetch with data.
+the forum see all the issues fromt the repo, you can search on title, as user i can create a new issue after fillen a form with title, description, label have 2 options = "bug" or "suggestion".
+Once you click on the issue you wil land on a detail page to see the information about the issue.
+
+UX/UI:
+I want a very modern look, that make the user easy and clear to use.
+I want to use clear and bright colors.
+
+TECH:
+Moder Next.js with focus on server side components, styling will me css-modules, typescript, for icons use lucide-react, github
 ```
 
 ### 2) Prompt → GUIDELINES.md (technical documentation)
