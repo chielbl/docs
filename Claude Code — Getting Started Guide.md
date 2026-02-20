@@ -643,6 +643,10 @@ Run Claude Code’s /init inside the repo; it will analyze the codebase and gene
 Then add this line near the top (or in a “Project context” section):
 ```
 We’re building the app described in @GUIDELINES.md. Read that file for general architecture, tech stack, and application decisions.
+
+Keep your replies extremely concise and focus on conveying the key information. No unnecessary fluff, no long code snippets.
+
+Whenever working with any third-party library or something similar, you MUST look up the official documentation to ensure that you're working with up-to-date information.
 ```
 ---
 *Last updated: February 2026*
