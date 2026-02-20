@@ -631,7 +631,8 @@ Create GUIDELINES.md at project root and paste the final guideline from step (2)
 Run Claude Code’s /init inside the repo; it will analyze the codebase and generate a starter CLAUDE.md (commands, directories, conventions it detects).
 ​
 Then add this line near the top (or in a “Project context” section):
-“We’re building the app described in @GUIDELINES.md. Read that file for general architecture, tech stack, and application decisions.”
-
+```
+We’re building the app described in @GUIDELINES.md. Read that file for general architecture, tech stack, and application decisions.
+```
 ---
 *Last updated: February 2026*
