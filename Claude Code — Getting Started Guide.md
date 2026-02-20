@@ -24,6 +24,7 @@
 15. [Best Practices](#best-practices)
 16. [Troubleshooting](#troubleshooting)
 17. [Resources](#resources)
+18. [Step to follow](#step-to-follow) 
 
 ---
 
@@ -554,6 +555,83 @@ Once basics work, layer in:
 ---
 
 > 💡 **Pro Tip:** Keep this file as `CLAUDE.md` or share it with your team as a quick-start reference. Pin it to your repo wiki or README for easy access.
+
+## Step to follow 
+
+### 1) Idea → “Prompt request”
+Write your product idea in ChatGPT and ask it to produce a single, high-quality build prompt.
+
+Include (copy/paste structure):
+
+- Goal: what you’re building + who it’s for.
+- Features: user stories (list them as bullets).
+- Data/API: what backend/source (e.g., GitHub REST), auth method, env vars.
+- Tech stack: strict requirements (Next.js App Router, Server Components, TS, CSS Modules, etc.).
+- UI/UX: style, layout, accessibility, responsive expectations.
+
+Output you want from ChatGPT: one “master prompt” you can reuse in other tools or chats.
+
+```
+Write me a prompt, where I will build a forum web application. The app is in de background connected with Github by using a github token where I can fetch with data. the forum see all the issues fromt the repo, you can search on title, as user i can create a new issue after fillen a form with title, description, label have 2 options = "bug" or "suggestion". Once you click on the issue you wil land on a detail page to see the information about the issue. UX/UI I want a very modern look, that make the user easy and clear to use. I want to use clear and bright colors. TECH: Moder Next.js with focus on server side components, styling will me css-modules, typescript, for icons use lucide-react, github
+```
+
+### 2) Prompt → GUIDELINES.md (technical documentation)
+Open a new chat and paste parts of the master prompt, then ask for “technical documentation / guideline” that you can commit to the repo.
+
+```
+Write me a technical documentation / guideline based on this prompt that you can commit to the repo.:
+Write me a prompt, where I will build a forum web application. The app is in de background connected with Github by using a github token where I can fetch with data. the forum see all the issues fromt the repo, you can search on title, as user i can create a new issue after fillen a form with title, description, label have 2 options = "bug" or "suggestion". Once you click on the issue you wil land on a detail page to see the information about the issue.
+
+The app must:
+- Fetch and display all issues from a specific GitHub repository
+- Allow searching issues by title
+- Allow users to create a new issue via a form
+- Display issue details on a separate dynamic page
+
+# TECH STACK (STRICT REQUIREMENTS)
+- Next.js (latest version, App Router)
+- Focus on Server Components (use Client Components only when necessary)
+- TypeScript
+- CSS Modules for styling
+- lucide-react for icons
+- GitHub REST API
+- Use environment variables for the GitHub token
+
+# UI/UX REQUIREMENTS
+Design must:
+- Have a modern, clean, minimal look
+- Use bright and clear colors
+- Have strong visual hierarchy
+- Be easy to use and intuitive
+- Use card-based layout for issues
+- Use subtle hover effects
+- Be responsive (mobile-friendly)
+
+Use CSS Modules only (no Tailwind, no styled-components).
+
+# ARCHITECTURE REQUIREMENTS
+- Use Server Components by default
+- Create a separate GitHub API utility layer
+- Use environment variables for:
+GITHUB_TOKEN
+GITHUB_OWNER
+GITHUB_REPO
+- Keep clean folder structure
+- Add reusable components
+- Follow best practices
+```
+
+### 3) (Optional) Generate UI in Google Stitch
+Use the app description + UI/UX requirements as the Stitch prompt to generate screens and a prototype, then iterate by giving targeted edit instructions (colors, hierarchy, component patterns).
+
+### 4) Add GUIDELINES.md to your repo
+Create GUIDELINES.md at project root and paste the final guideline from step (2).
+
+### 5) Generate CLAUDE.md via /init, then link to guidelines
+Run Claude Code’s /init inside the repo; it will analyze the codebase and generate a starter CLAUDE.md (commands, directories, conventions it detects).
+​
+Then add this line near the top (or in a “Project context” section):
+“We’re building the app described in @GUIDELINES.md. Read that file for general architecture, tech stack, and application decisions.”
 
 ---
 *Last updated: February 2026*
